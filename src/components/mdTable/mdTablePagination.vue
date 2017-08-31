@@ -56,16 +56,13 @@
     },
     watch: {
       mdTotal(val) {
-        const sub = this.currentPage * this.currentSize;
-
-        this.subTotal = sub > val ? val : sub;
         this.totalItems = isNaN(val) ? Number.MAX_SAFE_INTEGER : parseInt(val, 10);
       },
       mdSize(val) {
         this.currentSize = parseInt(val, 10);
       },
       mdPage(val) {
-        this.currentPage = parseInt(val, 10);
+        this.currentPage = parseInt(val, 1);
       }
     },
     computed: {
